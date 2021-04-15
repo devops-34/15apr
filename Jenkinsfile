@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('---clean---') {
             steps {
-                sh " yum install update -y"
+                sh " sudo yum install update"
+                sh "sudo yum install maven -y"
+                sh "sudo systemctl enable maven" 
             }
         }
         stage('--test--') {
